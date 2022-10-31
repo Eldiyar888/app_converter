@@ -1,0 +1,97 @@
+body {
+  background-color: steelblue;
+}
+
+.list-valute-wrapper {
+  height: calc(100vh - 55px);
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.valute-wrapper {
+  background-color: rgb(255, 255, 255);
+  align-items: center;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.item-first, .item-second {
+  display: flex;
+  align-items: center;
+  margin-left: 8px;
+}
+
+.item-title {
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+.item-title h2 {
+  margin: 0;
+}
+
+.path {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  margin-bottom: 5px;
+}
+
+.path a {
+  color:rgb(0, 0, 0);
+}
+
+.path p {
+  margin: 5px;
+  text-transform: uppercase;
+}
+
+.list-valute {
+  height:100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.list-valute-wrapper-item {
+  padding: 15px;
+  width: 300px;
+  background-color: #ffffff;
+  margin: 5px;
+  border-radius: 10px;
+}
+
+.list-valute-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.arrowUp {
+  color: green;
+}
+
+.arrowDown {
+  color: red;
+}
+
+h4 {
+  margin: 0 0 10px 0;
+}
+
+.find-name {
+  margin: 10px 0 10px 0;
+}
+
+.left-item {
+  display: flex;
+}
+
+.swap-icon {
+  color: steelblue;
+  margin: 0 5px 0 5px;
+}
