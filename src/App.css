@@ -95,3 +95,34 @@ h4 {
   color: steelblue;
   margin: 0 5px 0 5px;
 }
+
+.swap-icon:active {
+  background-color:aliceblue;
+}
+
+.list-valute-textfield {
+  background-color: #ffffff;
+}
+
+li {
+  list-style: none;
+}
+
+li a {
+  text-decoration: none;
+  color:#000000;
+  border: 1px solid #000000;
+  background-color: #ffffff;
+  padding: 0 10px 0 10px;
+  margin: 5px;
+}
+
+.pagination {
+  margin-top: 5px;
+}
+
+.pagination-wrapper {
+  display: flex;
+  justify-content: space-between;
+  top: 100px;
+}

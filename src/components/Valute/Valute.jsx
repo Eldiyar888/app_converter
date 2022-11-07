@@ -3,7 +3,7 @@ import Button from '@mui/material/Button';
 import SwapHorizIcon from '@mui/icons-material/SwapHoriz';
 
 const Valute = ({ item }) => {
-    console.log(item)
+    // console.log(item)
     const [from, setFrom] = useState('');
     const [to, setTo] = useState('');
     const [changed, setChanged] = useState(false);

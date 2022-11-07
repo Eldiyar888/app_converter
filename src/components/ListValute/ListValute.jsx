@@ -1,11 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import TextField from '@mui/material/TextField';
 import Valute from '../Valute/Valute';
+import Pagination from '../Pagination/Pagination';
+import { getUrl } from '../../store/Store';
 
 const ListValute = () => {
     const [valute, setValute] = useState({});
     const [error, setError] = useState(null);
     const [findName, setFindName] = useState('');
+
+    const [currentPage, setCurrentPage] = useState(1);
+    const [valutesPerPage] = useState(5);
 
 
     const handleFindName = (event) => {
@@ -19,7 +24,7 @@ const ListValute = () => {
             })
             .then(data => {
                 setValute(data.Valute);
-                console.log(data)
+                // console.log(data)
             })
             .catch(error => {
                 setError(error);
@@ -36,7 +41,13 @@ const ListValute = () => {
         return elem.Name.toLowerCase().includes(findName.toLowerCase()) || elem.CharCode.toLowerCase().includes(findName.toLowerCase())
     })
 
-    // console.log(valute);
+    const lastValuteIndex = currentPage * valutesPerPage;
+    const firstValuteIndex = lastValuteIndex - valutesPerPage;
+    const currentValute = find.slice(firstValuteIndex, lastValuteIndex)
+
+    const paginate = (pageNumber) => {
+        setCurrentPage(pageNumber)
+    }
 
     return (
         <div>
@@ -53,9 +64,14 @@ const ListValute = () => {
                         onChange={handleFindName}
                     />
                 </div>
-                {find.length > 0 ? find.map(item => (
-                        <Valute item={item}/>
+                {currentValute.length > 0 ? currentValute.map(item => (
+                    <Valute item={item} />
                 )) : `Ничего не найдено`}
+                <Pagination
+                    valutesPerPage={valutesPerPage}
+                    totalValutes={find.length}
+                    paginate={paginate}
+                />
             </div>
         </div>
     );
